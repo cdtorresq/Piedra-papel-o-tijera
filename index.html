@@ -5,105 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="js.js" defer></script>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
-
-    <script>
-
-   let numeroDeGanadasJugador= 0;
-   let numeroDeGanadasMaquina= 0;
-   let ronda;
-for ( ronda= 0; numeroDeGanadasJugador<5 && numeroDeGanadasMaquina<5 ; ronda++){
-
-   let grupoDeRespuesta = ["piedra","papel","tijera"];
-   let inputDelJugador= prompt("Escribe tu opcion");
-   opcionJugador=inputDelJugador.toLowerCase();
-
-   let RespuestaDelPartido;
-
-   
-  let opcionMaquina;
-
-  function seleccionarUnaOpcion() {
-
-  return opcionMaquina= grupoDeRespuesta[Math.floor(Math.random()*grupoDeRespuesta.length)];
-
-   }
-   seleccionarUnaOpcion();
-
-  function Ganador ()
-  {
-   if(opcionJugador== "piedra" && opcionMaquina=="piedra")
-   {
-    RespuestaDelPartido="Empate";
-   }
-   else if (opcionJugador== "piedra" && opcionMaquina=="papel")
-   {
-    RespuestaDelPartido="La maquina te rompio el ojete";
-   }
-   else if (opcionJugador== "piedra" && opcionMaquina=="tijera")
-   {
-    RespuestaDelPartido="Buena esa mi bro!"
-   }
-   else if (opcionJugador== "papel" && opcionMaquina=="piedra")
-   {
-    RespuestaDelPartido="Buena esa mi bro!"
-   }
-   else if (opcionJugador== "papel" && opcionMaquina=="papel")
-   {
-    RespuestaDelPartido="Empate"
-   }
-   else if (opcionJugador== "papel" && opcionMaquina=="tijera")
-   {
-    RespuestaDelPartido="La maquina te rompio el ojete"
-   }
-   else if (opcionJugador== "tijera" && opcionMaquina=="piedra")
-   {
-    RespuestaDelPartido="La maquina te rompio el ojete"
-   }
-   else if (opcionJugador== "tijera" && opcionMaquina=="papel")
-   {
-    RespuestaDelPartido="Buena esa mi bro!"
-   }
-   else
-   {
-    RespuestaDelPartido="Empate"
-   }
-
-  }
-  Ganador();
+  <div class="header">Piedra papel o tijera</div>
+  <div class="resultados">   
+     <div id="resultadoMaquina"></div>
+     <div id="resultadoPlayer"></div>
+  </div> 
+  <div class="headerNumeros">Puntajes</div>
+  <div class="Puntajes">
+    <div class="primerpuntaje">
+     <div>Puntaje de la Maquina</div><div id="conteoMaquina"></div>
+    </div>
+    <div class="segundopuntaje">
+     <div>Puntaje del Player</div><div id="conteoPlayer"></div>
+    </div>
+  </div>
   
+  <div class="encabezadoOpciones">ELige tu opcion!</div>
+  <div class="opciones">
+    <button id="1"><img class="piedra" src="images/piedra.png">piedra</button> 
+    <button id="2"><img class="papel" src="images/papel.png">papel</button>
+    <button id="3"><img class="tijera" src="images/tijera.png">tijera</button>
+  </div>
+  <div><div id="ganador"></div></div>
+  <div id="reset"></div>
 
-  function ContarJuego(){
+
+
    
-    if(RespuestaDelPartido=="La maquina te rompio el ojete")
-    {
-    numeroDeGanadasMaquina+=1;
-
-    }
-    else if(RespuestaDelPartido=="Buena esa mi bro!"){
-
-    numeroDeGanadasJugador+=1;        
-    }
-
-
-
-  }
-   
-  
-    
-    ContarJuego();
-
-  console.log(opcionJugador);
-  console.log(opcionMaquina);
-  console.log(RespuestaDelPartido);
-  console.log(numeroDeGanadasMaquina);
-  console.log(numeroDeGanadasJugador);
-}
-
-
-
-    </script>
-    
 </body>
 </html>
